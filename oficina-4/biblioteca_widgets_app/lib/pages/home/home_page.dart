@@ -17,7 +17,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: 15),
             TextLabel.build(
-              name: "Butões",
+              name: "Botões",
               size: 22,
               fontWeight: FontWeight.w600,
             ),
