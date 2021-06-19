@@ -10,6 +10,7 @@ class ButtonBase extends StatelessWidget {
   Color backgroundColor;
   String image;
   VoidCallback onPressed;
+  bool rounded;
 
   ButtonBase(
       {this.width = 200,
@@ -17,7 +18,9 @@ class ButtonBase extends StatelessWidget {
       this.backgroundColor = Colors.purple,
       this.image = "",
       required this.label,
-      required this.onPressed});
+      required this.onPressed,
+      this.rounded = false
+      });
 
   @override
   Widget build(BuildContext context) {
@@ -29,9 +32,12 @@ class ButtonBase extends StatelessWidget {
 
   _buildContainer() {
     return Container(
-      color: backgroundColor,
       width: width,
       height: height,
+      decoration: BoxDecoration(
+        color: backgroundColor,
+        borderRadius: rounded ? BorderRadius.circular(10) : null
+      ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [

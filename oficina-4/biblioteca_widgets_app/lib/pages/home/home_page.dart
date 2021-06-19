@@ -23,6 +23,7 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(height: 10),
             Row(
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 SizedBox(width: 10),
                 ButtonBase(
@@ -46,6 +47,39 @@ class _HomePageState extends State<HomePage> {
                     width: 100,
                     backgroundColor: AppColors.secondary,
                     image: AppImages.arrowLeft),
+              ],
+            ),
+            SizedBox(height: 10),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                SizedBox(width: 10),
+                ButtonBase(
+                  onPressed: () {},
+                  label: 'Entrar',
+                  height: 40,
+                  width: 100,
+                  backgroundColor: AppColors.primary,
+                  rounded: true,
+                ),
+                SizedBox(width: 10),
+                ButtonBase(
+                  onPressed: () {},
+                  label: 'Next',
+                  width: 100,
+                  backgroundColor: AppColors.grayscaleDetails,
+                  image: AppImages.arrowRight,
+                  rounded: true,
+                ),
+                SizedBox(width: 10),
+                ButtonBase(
+                  onPressed: () {},
+                  label: 'Back',
+                  width: 100,
+                  backgroundColor: AppColors.secondary,
+                  image: AppImages.arrowLeft,
+                  rounded: true,
+                ),
               ],
             ),
             SizedBox(height: 15),
