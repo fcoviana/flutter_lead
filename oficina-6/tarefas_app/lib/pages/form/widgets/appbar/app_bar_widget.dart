@@ -29,7 +29,6 @@ _buildRow() {
           fontWeight: FontWeight.w700,
           size: 25,
           color: AppColors.grayscaleOffWhite),
-      //SizedBox()
     ],
   );
 }

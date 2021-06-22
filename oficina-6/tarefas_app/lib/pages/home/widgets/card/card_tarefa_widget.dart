@@ -4,7 +4,10 @@ import 'package:tareafas_app/core/app_images.dart';
 import 'package:tareafas_app/shared/widgets/text_label.dart';
 
 class CardTarefa extends StatelessWidget {
-  CardTarefa();
+  String titulo;
+  String descricao;
+  
+  CardTarefa({ required this.titulo, required this.descricao});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +35,7 @@ class CardTarefa extends StatelessWidget {
                         fontWeight: FontWeight.w600)),
                 SizedBox(width: 10),
                 TextLabel.build(
-                    name: "Tarefa 09",
+                    name: "$titulo",
                     size: 14,
                     color: AppColors.grayscaleTitle,
                     fontWeight: FontWeight.w600)
@@ -44,7 +47,7 @@ class CardTarefa extends StatelessWidget {
                 Expanded(
                   child: TextLabel.build(
                       name:
-                          "Lorem ipsum dolor sit amet, consectetur ssd apse ipsum sect sit ascrest, alecdass...",
+                          "$descricao",
                       size: 14,
                       textAlign: TextAlign.justify,
                       color: AppColors.grayscaleTitle,

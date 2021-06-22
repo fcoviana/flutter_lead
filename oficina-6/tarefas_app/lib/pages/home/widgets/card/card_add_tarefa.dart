@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
-import 'package:tareafas_app/pages/form/form_page.dart';
+import 'package:tareafas_app/controllers/tarefa_controller.dart';
 
 import '/shared/widgets/text_label.dart';
 import '../botao/botao_add_tarefa.dart';
 import '/core/app_colors.dart';
+import '/pages/form/form_page.dart';
 
 class CardAddTarefa extends StatelessWidget {
-  CardAddTarefa();
+  TarefaController tarefaController;
+  CardAddTarefa({required this.tarefaController});
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class CardAddTarefa extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => FormPage()));
+              context, MaterialPageRoute(builder: (context) => FormPage(tarefaController: tarefaController,)));
         },
         child: Container(
           height: 146,

@@ -17,6 +17,7 @@ dependencies:
   flutter_mobx: ^2.0.0
   mobx_codegen: ^2.0.1
   dotted_border: ^2.0.0
+  uuid: 3.0.4
 
 dev_dependencies:
   flutter_test:

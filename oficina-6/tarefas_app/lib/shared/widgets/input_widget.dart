@@ -4,8 +4,9 @@ import '/core/app_colors.dart';
 
 class InputWidget extends StatelessWidget {
   String label;
+  TextEditingController controller;
 
-  InputWidget({required this.label});
+  InputWidget({required this.label, required this.controller});
 
   @override
   Widget build(BuildContext context) {
@@ -27,6 +28,7 @@ class InputWidget extends StatelessWidget {
 
   _buildTextField() {
     return TextField(
+        controller: controller,
         style: TextStyle(color: AppColors.grayscaleTitle),
         decoration: _buildTextFieldDecoration());
   }
