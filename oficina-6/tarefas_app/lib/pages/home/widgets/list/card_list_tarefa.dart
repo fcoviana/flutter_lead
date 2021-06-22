@@ -8,7 +8,7 @@ class CardListTarefa extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-        padding: EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+        
         children: [CardTarefa(), CardTarefa(), CardTarefa(), CardTarefa()]);
   }
 }

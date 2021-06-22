@@ -7,7 +7,7 @@ class ButtonBase extends StatelessWidget {
   double width;
   double height;
   String label;
-  Color backgroundColor;
+  Color? backgroundColor;
   String image;
   VoidCallback onPressed;
   bool rounded;
@@ -15,7 +15,7 @@ class ButtonBase extends StatelessWidget {
   ButtonBase(
       {this.width = 200,
       this.height = 40,
-      this.backgroundColor = Colors.purple,
+      this.backgroundColor,
       this.image = "",
       required this.label,
       required this.onPressed,
@@ -35,8 +35,8 @@ class ButtonBase extends StatelessWidget {
       width: width,
       height: height,
       decoration: BoxDecoration(
-        color: backgroundColor,
-        borderRadius: rounded ? BorderRadius.circular(10) : null
+        color: backgroundColor ?? AppColors.primary,
+        borderRadius: rounded ? BorderRadius.circular(50) : null
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,

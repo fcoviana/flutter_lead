@@ -19,7 +19,7 @@ class _HomePageState extends State<HomePage> {
           children: [
             SizedBox(height: 22),
             CardAddTarefa(),
-            SizedBox(height: 30),
+            SizedBox(height: 16),
             Expanded(child: CardListTarefa())
           ],
         ),

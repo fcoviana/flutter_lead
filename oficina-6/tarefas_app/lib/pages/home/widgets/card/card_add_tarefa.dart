@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:dotted_border/dotted_border.dart';
+import 'package:tareafas_app/pages/form/form_page.dart';
 
 import '/shared/widgets/text_label.dart';
 import '../botao/botao_add_tarefa.dart';
@@ -12,7 +13,10 @@ class CardAddTarefa extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: InkWell(
-        onTap: () => print('CLICK'),
+        onTap: () {
+          Navigator.push(
+              context, MaterialPageRoute(builder: (context) => FormPage()));
+        },
         child: Container(
           height: 146,
           width: 378,

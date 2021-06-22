@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:tareafas_app/shared/widgets/text_label.dart';
+
+import '/shared/widgets/text_label.dart';
 import '/core/app_colors.dart';
 
 class AppBarWidget extends PreferredSize {
@@ -25,7 +26,7 @@ Container _buildRow() {
     mainAxisAlignment: MainAxisAlignment.center,
     children: [
       TextLabel.build(
-          name: "MINHAS TAREFAS",
+          name: "Minhas Tarefas",
           fontWeight: FontWeight.w700,
           size: 30,
           color: AppColors.grayscaleOffWhite)
