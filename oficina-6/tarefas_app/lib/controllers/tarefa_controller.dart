@@ -20,6 +20,18 @@ abstract class TarefaControllerBase with Store {
 
     tarefa = Tarefa(id: uuid, titulo: titulo, descricao: descricao);
     tarefas.add(tarefa);
-    // reaction((_) => tarefa, (_) => print(tarefas.length));
+  }
+
+  @action
+  void editar() {
+    tarefas.removeWhere((element) => element.id == this.tarefa.id);
+    tarefas.add(this.tarefa);
+    this.tarefa = {};
+  }
+
+  @action
+  void remove() {
+    tarefas.removeWhere((element) => element.id == this.tarefa.id);
+    this.tarefa = {};
   }
 }

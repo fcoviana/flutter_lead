@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:tareafas_app/core/app_colors.dart';
-import 'package:tareafas_app/core/app_images.dart';
-import 'package:tareafas_app/shared/widgets/text_label.dart';
+
+import '/controllers/tarefa_controller.dart';
+import '/core/app_colors.dart';
+import '/core/app_images.dart';
+import '/models/tarefa.dart';
+import '/pages/form/form_page.dart';
+import '/shared/widgets/text_label.dart';
 
 class CardTarefa extends StatelessWidget {
-  String titulo;
-  String descricao;
-  
-  CardTarefa({ required this.titulo, required this.descricao});
+  TarefaController tarefaController;
+  Tarefa tarefa;
+
+  CardTarefa({required this.tarefa, required this.tarefaController});
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +39,7 @@ class CardTarefa extends StatelessWidget {
                         fontWeight: FontWeight.w600)),
                 SizedBox(width: 10),
                 TextLabel.build(
-                    name: "$titulo",
+                    name: "${tarefa.titulo}",
                     size: 14,
                     color: AppColors.grayscaleTitle,
                     fontWeight: FontWeight.w600)
@@ -46,8 +50,7 @@ class CardTarefa extends StatelessWidget {
               children: [
                 Expanded(
                   child: TextLabel.build(
-                      name:
-                          "$descricao",
+                      name: "${tarefa.descricao}",
                       size: 14,
                       textAlign: TextAlign.justify,
                       color: AppColors.grayscaleTitle,
@@ -61,12 +64,24 @@ class CardTarefa extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 InkWell(
-                  onTap: () => print('EDITA'),
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => FormPage(
+                                  tarefaController: tarefaController,
+                                  tarefa: tarefa,
+                                  label: 'Atualizar',
+                                )));
+                  },
                   child: Image.asset(AppImages.edit, width: 25, height: 25),
                 ),
                 SizedBox(width: 25),
                 InkWell(
-                  onTap: () => print('DELETA'),
+                  onTap: () => {
+                    this.tarefaController.tarefa = this.tarefa,
+                    this.tarefaController.remove()
+                  },
                   child: Image.asset(AppImages.delte, width: 25, height: 25),
                 ),
               ],

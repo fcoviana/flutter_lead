@@ -3,18 +3,25 @@ import 'package:tareafas_app/controllers/tarefa_controller.dart';
 
 import '/pages/form/widgets/appbar/app_bar_widget.dart';
 import '/shared/widgets/widgets.dart';
+import '/models/tarefa.dart';
 
 class FormPage extends StatelessWidget {
   TextEditingController tituloController = TextEditingController();
   TextEditingController descricaoController = TextEditingController();
   TarefaController tarefaController;
+  Tarefa? tarefa;
 
-  FormPage({required this.tarefaController});
+  String label;
+
+  FormPage({required this.tarefaController, this.tarefa, required this.label});
 
   @override
   Widget build(BuildContext context) {
+    tituloController.text = tarefa != null ? tarefa!.titulo : '';
+    descricaoController.text = tarefa != null ? tarefa!.descricao : '';
+
     return Scaffold(
-      appBar: AppBarWidget(),
+      appBar: AppBarWidget(titulo: label),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
         child: Container(
@@ -32,14 +39,27 @@ class FormPage extends StatelessWidget {
         child: ButtonBase(
           height: 56,
           rounded: true,
-          label: 'Salvar',
+          label: label,
           onPressed: () {
-            tarefaController.create(
-                tituloController.text, descricaoController.text);
-            Navigator.pop(context);
+            onSubmit(context);
           },
         ),
       ),
     );
+  }
+
+  onSubmit(context) {
+    if (tarefa == null) {
+      tarefaController.create(tituloController.text, descricaoController.text);
+    } else {
+      var tarefaToEdit = Tarefa(
+          id: tarefa!.id,
+          titulo: tituloController.text,
+          descricao: descricaoController.text);
+
+      tarefaController.tarefa = tarefaToEdit;
+      tarefaController.editar();
+    }
+    Navigator.pop(context);
   }
 }

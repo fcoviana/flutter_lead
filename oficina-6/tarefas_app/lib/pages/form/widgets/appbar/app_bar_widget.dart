@@ -5,7 +5,9 @@ import '/shared/widgets/text_label.dart';
 import '/core/app_colors.dart';
 
 class AppBarWidget extends PreferredSize {
-  AppBarWidget()
+  String titulo;
+
+  AppBarWidget({required this.titulo})
       : super(
             preferredSize: Size.fromHeight(150),
             child: Container(
@@ -13,11 +15,11 @@ class AppBarWidget extends PreferredSize {
               child: Container(
                   color: AppColors.primary,
                   width: double.maxFinite,
-                  child: _buildRow()),
+                  child: _buildRow(titulo)),
             ));
 }
 
-_buildRow() {
+_buildRow(titulo) {
   return Row(
     mainAxisAlignment: MainAxisAlignment.start,
     children: [
@@ -25,7 +27,7 @@ _buildRow() {
       BotaoBackWideget(),
       SizedBox(width: 26),
       TextLabel.build(
-          name: "Adicionar Tarefa",
+          name: '$titulo Tarefa',
           fontWeight: FontWeight.w700,
           size: 25,
           color: AppColors.grayscaleOffWhite),

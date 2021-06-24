@@ -54,6 +54,28 @@ mixin _$TarefaController on TarefaControllerBase, Store {
   }
 
   @override
+  void editar() {
+    final _$actionInfo = _$TarefaControllerBaseActionController.startAction(
+        name: 'TarefaControllerBase.editar');
+    try {
+      return super.editar();
+    } finally {
+      _$TarefaControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
+  void remove() {
+    final _$actionInfo = _$TarefaControllerBaseActionController.startAction(
+        name: 'TarefaControllerBase.remove');
+    try {
+      return super.remove();
+    } finally {
+      _$TarefaControllerBaseActionController.endAction(_$actionInfo);
+    }
+  }
+
+  @override
   String toString() {
     return '''
 tarefa: ${tarefa},

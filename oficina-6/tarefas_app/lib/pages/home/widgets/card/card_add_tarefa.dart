@@ -17,7 +17,12 @@ class CardAddTarefa extends StatelessWidget {
       child: InkWell(
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => FormPage(tarefaController: tarefaController,)));
+              context,
+              MaterialPageRoute(
+                  builder: (context) => FormPage(
+                        tarefaController: tarefaController,
+                        label: 'Adicionar',
+                      )));
         },
         child: Container(
           height: 146,
