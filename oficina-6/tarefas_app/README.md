@@ -10,6 +10,6 @@ Construção de um CRUD
 ### Tela home
 <img src="doc/print1.png" width="300"> 
 
-### Tela home
+### Tela form
 <img src="doc/print2.png" width="300"> 
 
