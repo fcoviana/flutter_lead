@@ -8,11 +8,12 @@ Construção de um CRUD
 
 ## Imagem
 
-Tela home
-![print](doc/print1.png)
+### Tela home
+<img src="doc/print1.png" width="250"> 
+<!-- [print](doc/print1.png)
 :height: 100px
 :width: 200 px
-:scale: 50 %
+:scale: 50 % -->
 
 
 Tela form
