@@ -6,16 +6,10 @@ Construção de um CRUD
     flutter packages pub run build_runner watch
 ```
 
-## Imagem
+## Imagens
+### Tela home
+<img src="doc/print1.png" width="300"> 
 
 ### Tela home
-<img src="doc/print1.png" width="250"> 
-<!-- [print](doc/print1.png)
-:height: 100px
-:width: 200 px
-:scale: 50 % -->
-
-
-Tela form
-![print](doc/print2.png)   
+<img src="doc/print2.png" width="300"> 
 
